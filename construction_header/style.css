@@ -1,0 +1,358 @@
+/* Google Font  */
+@import url("https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,400;1,500&display=swap");
+
+/* Root */
+:root {
+  --main: #f52323;
+  --box_shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Besley", serif;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  border: none;
+  outline: none;
+}
+*::selection {
+  background: var(--main);
+  color: #000;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.2s ease-in-out;
+}
+.btn:hover {
+  background: var(--main);
+  letter-spacing: 1px;
+}
+section {
+  padding: 5rem 10%;
+}
+/* Header/Navbar Start */
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 10%;
+  box-shadow: var(--box_shadow);
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  z-index: 1000;
+}
+header .logo {
+  font-size: 2.5rem;
+  color: #000;
+  font-weight: 600;
+}
+header .logo span {
+  color: var(--main);
+}
+header .navbar a {
+  color: #000;
+  font-size: 2rem;
+  margin: 0 1rem;
+}
+header .navbar a:hover {
+  color: var(--main);
+}
+header .Icons a {
+  font-size: 2rem;
+  height: 4rem;
+  width: 4rem;
+  line-height: 4rem;
+  color: #000;
+  background-color: #ccc;
+  text-align: center;
+  margin-left: 0.2rem;
+}
+header .Icons a:hover {
+  color: var(--main);
+  background-color: #000;
+}
+header #MenuBtn {
+  display: none;
+}
+header .SearchForm {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+  background: #fff;
+  box-shadow: var(--box_shadow);
+  width: 70rem;
+  align-items: center;
+  display: none;
+  gap: 1rem;
+  animation: Form 0.1s linear;
+}
+header .SearchForm.active {
+  display: flex;
+}
+header .SearchForm input {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  background: #e6e4e4;
+  font-size: 1.6rem;
+}
+header .SearchForm label {
+  font-size: 2.5rem;
+  cursor: pointer;
+  margin: 0 1rem;
+}
+
+/* Login Form */
+header .LoginForm {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%);
+  box-shadow: var(--box_shadow);
+  background: #fff;
+  padding: 2rem;
+  text-align: center;
+  width: 42rem;
+  animation: Form 0.1s linear;
+  display: none;
+}
+header .LoginForm.active {
+  display: block;
+}
+header .LoginForm h3 {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+}
+header .LoginForm .box {
+  width: 100%;
+  margin: 0.7rem 0;
+  background-color: #e6e4e4;
+  font-size: 1.6rem;
+  padding: 1.2rem 1.4rem;
+}
+header .LoginForm .FormDetail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 1.4rem;
+  padding-bottom: 1rem;
+}
+header .LoginForm .FormDetail label {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+header .LoginForm .FormDetail a {
+  color: var(--main);
+  margin-left: auto;
+  font-size: 1.4rem;
+}
+header .LoginForm .FormDetail a:hover {
+  text-decoration: underline;
+}
+header .LoginForm .FormDetail .btn {
+  width: 100%;
+}
+header .LoginForm p {
+  font-size: 1.5rem;
+  color: #3e3e3e;
+  padding-top: 1.4rem;
+  line-height: 2;
+}
+
+/* For Information */
+.InformationMain {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 36rem;
+  background: #fff;
+  height: 100%;
+  z-index: 100000;
+  padding: 0 2rem;
+  padding-top: 5rem;
+  box-shadow: var(--box_shadow);
+  text-align: center;
+  display: none;
+}
+.InformationMain.active {
+  display: block;
+}
+.InformationMain .Information {
+  padding: 2rem 0;
+}
+.InformationMain .Information i {
+  height: 4rem;
+  width: 4rem;
+  line-height: 4rem;
+  font-size: 2rem;
+  color: #000;
+  background: #ccc;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.InformationMain .Information i:hover {
+  background: var(--main);
+  color: #000;
+}
+.InformationMain .Information h3 {
+  padding: 1rem 0;
+  font-size: 2rem;
+}
+.InformationMain .Information p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #757373;
+}
+.InformationMain .SocialMedia {
+  padding-top: 2rem;
+  margin-top: 1rem;
+  border-top: 1px solid #000;
+}
+.InformationMain .SocialMedia a {
+  height: 4rem;
+  width: 4rem;
+  line-height: 4rem;
+  font-size: 2rem;
+  color: #000;
+  background: #ccc;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 0.3rem;
+}
+.InformationMain .SocialMedia a:hover {
+  background: #000;
+  color: #fff;
+}
+#InformationClose {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+  color: #000;
+  font-size: 4rem;
+}
+#InformationClose:hover {
+  transform: rotate(360deg);
+}
+/* Header/Navbar End */
+
+/* Home Section Start */
+.Home {
+  padding: 0;
+}
+.Home .Slide {
+  position: relative;
+  height: 70rem;
+  display: flex;
+  align-items: center;
+  background-size: cover !important;
+  background-position: center !important;
+}
+.Home .Slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #fff, transparent);
+}
+.Home .Slide .HomeContent {
+  position: relative;
+  width: 50rem;
+}
+.Home .Slide .HomeContent h3 {
+  font-size: 6rem;
+}
+.Home .Slide .HomeContent p {
+  font-size: 1.4rem;
+  line-height: 2;
+  padding: 1rem 0;
+}
+/* Home Section End */
+
+/* Animation */
+@keyframes Form {
+  0% {
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+/* Media Query */
+@media (max-width: 1200px) {
+  header {
+    padding: 1.5rem 2rem;
+  }
+  section {
+    padding: 3rem 5%;
+  }
+}
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  header #MenuBtn {
+    display: initial;
+  }
+  header .navbar {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: 0.2s linear;
+  }
+  header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  header .navbar a {
+    display: block;
+    margin: 2rem;
+    box-shadow: var(--box_shadow);
+  }
+}
+
+@media (max-width: 768px) {
+  header .SearchForm {
+    width: 85%;
+  }
+  header .LoginForm {
+    width: 85%;
+  }
+  /* For home */
+  .Home .Slide {
+    justify-content: center;
+  }
+  .Home .Slide .HomeContent {
+    text-align: center;
+  }
+  .Home .Slide .HomeContent h3 {
+    font-size: 2.9rem;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
